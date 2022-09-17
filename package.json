@@ -1,17 +1,15 @@
 {
   "name": "weatherapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "my web app",
   "main": "app.js",
   "scripts": {
     "start":"node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hitesh Kumar",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "consolidate": "^0.16.0",
     "dotenv": "^16.0.2",
     "express": "^4.17.1"
   }
