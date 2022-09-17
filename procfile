@@ -1,2 +1,0 @@
-web: nodemon app.js
-heroku ps:scale web=1
