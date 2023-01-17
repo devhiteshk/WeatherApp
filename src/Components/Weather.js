@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import sun_ris from "./sunrise.png";
 import sun_su from "./sunset.png";
 
 function Weather({ wdata }) {
-  console.log(wdata);
-
   let getDayLength = (timestamp1, timestamp2) => {
     var difference =
       new Date() - timestamp2 * 1000 - (new Date() - timestamp1 * 1000);
@@ -66,7 +64,7 @@ function Weather({ wdata }) {
     icon = wdata.weather[0].icon;
   }
 
-  return wdata ? (
+  return wdata && String(wdata.cod) === "200" ? (
     <div className="flex font-bold flex-col justify-center items-center sm:flex-row md:flex-row">
       <div className="mr-0 sm:mr-6">
         <div className="group1 h-56 mt-6 bg-white/90 p-4 max-w-sm rounded overflow-hidden shadow-lg ">
@@ -88,9 +86,9 @@ function Weather({ wdata }) {
             {sky}
           </div>
           <div className="flex items-center justify-center">
-            <button className="bg-rose-500 hover:bg-rose-400 text-white font-bold py-2 px-4 border-b-4 border-rose-700 hover:border-rose-500 rounded">
-              check in <span>&#8457;</span>
-            </button>
+            <div className="bg-rose-500 text-white font-bold py-2 px-4 border-b-4 border-rose-700 rounded">
+              Nice Day ✅
+            </div>
           </div>
         </div>
         <div className="group2 h-56 bg-white/90 mt-6 p-4 flex items-center justify-center max-w-sm rounded overflow-hidden shadow-lg">
@@ -168,7 +166,13 @@ function Weather({ wdata }) {
       </div>
     </div>
   ) : (
-    <></>
+    <>
+      <div className="flex justify-center items-center">
+        <div className="mt-8 mb-8 text-2xl text-white font-bold">
+          Please Enter a Valid City Name 🫣
+        </div>
+      </div>
+    </>
   );
 }
 

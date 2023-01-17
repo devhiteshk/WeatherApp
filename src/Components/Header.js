@@ -8,7 +8,7 @@ function Header({ city, setCity, getWeather }) {
   };
 
   let handleEnter = (e) => {
-    if (e.keyCode === 13 && previousCity !== city) {
+    if (e.keyCode === 13 && previousCity.toLowerCase() !== city.toLowerCase()) {
       getWeather();
       previousCity = city;
     }
