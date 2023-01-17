@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import Header from "./Components/Header";
+import Weather from "./Components/Weather";
+import Footer from "./Components/Footer";
 
 function App() {
   const [city, setCity] = useState("");
@@ -11,7 +13,8 @@ function App() {
     city +
     "&" +
     "appid=" +
-    process.env.REACT_APP_OW_TOKEN;
+    process.env.REACT_APP_OW_TOKEN +
+    "&units=metric";
 
   let getWeather = () => {
     axios.get(API_URL).then((res) => setWdata(res.data));
@@ -20,6 +23,8 @@ function App() {
   return (
     <div className="App">
       <Header city={city} setCity={setCity} getWeather={getWeather} />
+      <Weather wdata={wdata} />
+      <Footer />
     </div>
   );
 }
