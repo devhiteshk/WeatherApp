@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import sun_ris from "./sunrise.png";
 import sun_su from "./sunset.png";
 
