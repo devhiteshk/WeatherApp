@@ -168,7 +168,7 @@ function Weather({ wdata }) {
   ) : (
     <>
       <div className="flex justify-center items-center">
-        <div className="mt-8 mb-8 text-2xl text-white font-bold">
+        <div className="mt-8 mb-8 text-1xl sm:text-2xl text-white font-bold">
           Please Enter a Valid City Name 🫣
         </div>
       </div>
