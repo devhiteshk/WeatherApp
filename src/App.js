@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./App.css";
 import axios from "axios";
+import Header from "./Components/Header";
 
 function App() {
   const [city, setCity] = useState("");
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">Hello</header>
+      <Header city={city} setCity={setCity} getWeather={getWeather} />
     </div>
   );
 }
